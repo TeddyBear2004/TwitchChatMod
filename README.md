@@ -4,7 +4,7 @@ haben volle Rechte auf deinen Account.
 Bitte beachte, dass diese nicht in fremde Hände geraten. 
 Wenn du mit der Mod nur lesen möchtest, kannst du bei Punkt 5. a) und b) weglassen.
 
-1.	Die Mod herunterladen und in den /mods/ Ordner deiner Forge Installation ziehen.
+1.	Die Mod herunterladen und in den /mods/ Ordner deiner Forge 1.16.3 Installation ziehen.
 2.	Forge ausführen und nach dem Start wieder beenden.
 3.	Auf der Website https://dev.twitch.tv/console/apps eine Anwendung registrieren.
 
