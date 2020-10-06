@@ -28,3 +28,5 @@ Wenn du mit der Mod nur lesen möchtest, kannst du bei Punkt 5. a) und b) weglas
 Während des Spielens kann man sich mit #help eine Hilfe Übersicht ausgeben lassen.
 
 Viel Spaß mit der Mod.
+
+Download: https://www.dreamtale.de/mods/twitchchat-1.0.jar
