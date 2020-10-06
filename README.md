@@ -1,8 +1,8 @@
 To-Do zum Installieren der Minecraft Mod „Twitch Chat“. (Änderungen im Namen sind Vorbehalten)
-Warnung: Die Werte, die du während der Installation von den verschiedenen Webseiten holst, 
-haben volle Rechte auf deinen Account. 
-Bitte beachte, dass diese nicht in fremde Hände geraten. 
-Wenn du mit der Mod nur lesen möchtest, kannst du bei Punkt 5. a) und b) weglassen.
+Warnung: Die Daten, die du während der Installation von den verschiedenen Webseiten holst,
+haben volle Rechte auf deinen Account.
+Bitte beachte, dass du diese nicht in fremde Hände gibst.
+Wenn du mit der Mod nur Nachrichten lesen möchtest, kannst du bei Punkt 5. 1) und 2) weglassen.
 
 1.	Die Mod herunterladen und in den /mods/ Ordner deiner Forge 1.16.3 Installation ziehen.
 2.	Forge ausführen und nach dem Start wieder beenden.
