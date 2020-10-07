@@ -24,6 +24,7 @@ Wenn du mit der Mod nur Nachrichten lesen möchtest, kannst du bei Punkt 5. 1) u
 4)	channel = Dem Channel, dem du zugucken möchtest. Achtung: nur Kleinbuchstaben.
 5)	message = Hier wurde schon ein Standard angegeben. Farbcodes können mit $+Zeichen angegeben werden. %User% wird mit dem Nachrichten Sender ersetzt und %Message% mit der Nachricht.
 6)	toIgnore = Hier ist eine Liste mit Twitch Accounts, die nicht in Minecraft angezeigt werden sollen. Diese kann während des Spielens mit #ignore oder #unignore verändert werden.
+7) language = Hier setzt du eine File, in der du später die Sprache ändern kannst.
 
 Während des Spielens kann man sich mit #help eine Hilfe Übersicht ausgeben lassen.
 
