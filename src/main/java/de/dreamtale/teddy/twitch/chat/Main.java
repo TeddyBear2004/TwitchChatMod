@@ -22,24 +22,37 @@ import java.util.Objects;
 public class Main {
     public static TwitchClient client;
     public static FileConfig twitchChatConfig = new FileConfig("twitchChatConfig");
+    public static FileConfig languageConfig;
 
     public Main(){
-        init();
-    }
-
-    public static void main(String[] args){
-        init();
-    }
-
-    public static void init(){
         EventManager eventManager = new EventManager();
         twitchChatConfig.setDefault("clientId", "CLIENT_ID");
         twitchChatConfig.setDefault("clientSecret", "CLIENT_SECRET");
         twitchChatConfig.setDefault("accessToken", "ACCESS_TOKEN");
         twitchChatConfig.setDefault("channel", "CHANNEL_TO_JOIN");
-        twitchChatConfig.setDefault("message", "$0[$5Twitch$0] $8%User%$0: $7%Message%");
         twitchChatConfig.setDefault("toIgnore", new String[]{"exampleUser1", "exampleUser2"});
+        twitchChatConfig.setDefault("language", "lang/de_twitch");
         twitchChatConfig.save();
+
+        languageConfig = new FileConfig(Objects.requireNonNull(twitchChatConfig.getString("language")));
+        languageConfig.setDefault("ban_success", "You have banned %s with the reason: %s");
+        languageConfig.setDefault("help", "#twitch [Message]\n" +
+                "#help\n" +
+                "#reload\n" +
+                "#ignore [User]\n" +
+                "#unignore [User]\n" +
+                "#timeout [User] {Reason}\n" +
+                "#ban [User] {Reason}\n" +
+                "#unban [User]\n");
+        languageConfig.setDefault("ignore_success", "Added %s to the ignore list.");
+        languageConfig.setDefault("reload_success", "Reload complete!");
+        languageConfig.setDefault("receive_message", "$0[$5Twitch$0] $8%User%$0: $7%Message%");
+        languageConfig.setDefault("timeout_success", "You have timeout %s for %d seconds with the reason: %s");
+        languageConfig.setDefault("unban_success", "You have unbanned %s");
+        languageConfig.setDefault("unignore_success", "Removed %s from the ignore list.");
+        languageConfig.setDefault("untimeout_success", "You have removed the timeout from %s with the reason: %s");
+        languageConfig.save();
+
 
         eventManager.registerEventHandler(new ReactorEventHandler());
         eventManager.autoDiscovery();

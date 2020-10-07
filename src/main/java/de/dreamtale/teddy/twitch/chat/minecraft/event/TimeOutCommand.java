@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class TimeOutCommand {
     @SubscribeEvent
@@ -31,7 +32,7 @@ public class TimeOutCommand {
 
             Main.client.getChat().timeout(Main.twitchChatConfig.getString("channel"), args.get(1), duration, builder.toString().trim());
 
-            Main.sendMessageOnlyToClient(String.format("You have timeout %s for %d seconds with the reason: %s", args.get(1), duration.getSeconds(), builder.toString().trim()));
+            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("timeout_success")), args.get(1), duration.getSeconds(), builder.toString().trim()));
 
         }
     }

@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class UnTimeOutCommand {
     @SubscribeEvent
@@ -24,7 +25,7 @@ public class UnTimeOutCommand {
 
             Main.client.getChat().sendMessage(Main.twitchChatConfig.getString("channel"), String.format("/untimeout %s %s", args.get(1), builder.toString().trim()));
 
-            Main.sendMessageOnlyToClient(String.format("You have removed the timeout from %s with the reason: %s", args.get(1), builder.toString().trim()));
+            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("untimeout_success")), args.get(1), builder.toString().trim()));
         }
     }
 }

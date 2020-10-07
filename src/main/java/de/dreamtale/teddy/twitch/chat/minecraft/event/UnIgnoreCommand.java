@@ -7,6 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class UnIgnoreCommand {
     @SubscribeEvent
@@ -26,7 +27,7 @@ public class UnIgnoreCommand {
 
             Main.twitchChatConfig.save();
 
-            Main.sendMessageOnlyToClient(String.format("Removed %s from the ignore list.", args.get(1)));
+            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("unignore_success")), args.get(1)));
         }
     }
 }

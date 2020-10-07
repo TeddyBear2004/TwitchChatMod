@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class TCommand {
     @SubscribeEvent
@@ -21,7 +22,7 @@ public class TCommand {
 
             Main.client.getChat().sendMessage(Main.twitchChatConfig.getString("channel"), builder.toString().trim());
 
-            String message = Main.twitchChatConfig.getString("message");
+            String message = Objects.requireNonNull(Main.languageConfig.getString("receive_success"));
             if(message == null)
                 return;
             message = message.replaceAll("%User%", "Du");

@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class UnBanCommand {
     @SubscribeEvent
@@ -19,7 +20,7 @@ public class UnBanCommand {
 
             Main.client.getChat().unban(Main.twitchChatConfig.getString("channel"), args.get(1));
 
-            Main.sendMessageOnlyToClient(String.format("You have unbanned %s", args.get(1)));
+            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("unban_success")), args.get(1)));
 
         }
     }
