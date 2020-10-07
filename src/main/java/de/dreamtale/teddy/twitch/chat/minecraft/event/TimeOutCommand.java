@@ -32,7 +32,12 @@ public class TimeOutCommand {
 
             Main.client.getChat().timeout(Main.twitchChatConfig.getString("channel"), args.get(1), duration, builder.toString().trim());
 
-            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("timeout_success")), args.get(1), duration.getSeconds(), builder.toString().trim()));
+            String message = Main.languageConfig.getString("timeout_success");
+
+            if(message == null || message.equals(""))
+                return;
+
+            Main.sendMessageOnlyToClient(String.format(message, args.get(1), duration.getSeconds(), builder.toString().trim()));
 
         }
     }

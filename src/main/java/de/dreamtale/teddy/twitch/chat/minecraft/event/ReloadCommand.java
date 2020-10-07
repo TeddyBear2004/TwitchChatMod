@@ -12,7 +12,13 @@ public class ReloadCommand {
         if(event.getMessage().toLowerCase().startsWith("#reload".toLowerCase())){
             event.setCanceled(true);
             Main.twitchChatConfig.reload();
-            Main.sendMessageOnlyToClient(Objects.requireNonNull(Main.languageConfig.getString("reload_success")));
+
+            String message = Main.languageConfig.getString("reload_success");
+
+            if(message == null || message.equals(""))
+                return;
+
+            Main.sendMessageOnlyToClient(message);
         }
     }
 }

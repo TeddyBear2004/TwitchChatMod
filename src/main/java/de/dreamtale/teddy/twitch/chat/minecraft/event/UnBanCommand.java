@@ -20,7 +20,12 @@ public class UnBanCommand {
 
             Main.client.getChat().unban(Main.twitchChatConfig.getString("channel"), args.get(1));
 
-            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("unban_success")), args.get(1)));
+            String message = Main.languageConfig.getString("unban_success");
+
+            if(message == null || message.equals(""))
+                return;
+
+            Main.sendMessageOnlyToClient(String.format(message, args.get(1)));
 
         }
     }

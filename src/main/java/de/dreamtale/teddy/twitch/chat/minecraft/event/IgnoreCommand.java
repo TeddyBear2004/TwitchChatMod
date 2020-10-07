@@ -27,7 +27,12 @@ public class IgnoreCommand {
 
             Main.twitchChatConfig.save();
 
-            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("ignore_success")), args.get(1)));
+            String message = Main.languageConfig.getString("ignore_success");
+
+            if(message == null || message.equals(""))
+                return;
+
+            Main.sendMessageOnlyToClient(String.format(message, args.get(1)));
         }
     }
 }

@@ -22,9 +22,11 @@ public class TCommand {
 
             Main.client.getChat().sendMessage(Main.twitchChatConfig.getString("channel"), builder.toString().trim());
 
-            String message = Objects.requireNonNull(Main.languageConfig.getString("receive_success"));
-            if(message == null)
+            String message = Main.languageConfig.getString("ban_success");
+
+            if(message == null || message.equals(""))
                 return;
+
             message = message.replaceAll("%User%", "Du");
             message = message.replaceAll("%Message%", builder.toString().trim());
             message = message.replaceAll("\\$", "§");

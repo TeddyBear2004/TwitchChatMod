@@ -6,7 +6,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class BanCommand {
     @SubscribeEvent
@@ -25,7 +24,12 @@ public class BanCommand {
 
             Main.client.getChat().ban(Main.twitchChatConfig.getString("channel"), args.get(1), builder.toString().trim());
 
-            Main.sendMessageOnlyToClient(String.format(Objects.requireNonNull(Main.languageConfig.getString("ban_success")), args.get(1), builder.toString().trim()));
+            String message = Main.languageConfig.getString("ban_success");
+
+            if(message == null || message.equals(""))
+                return;
+
+            Main.sendMessageOnlyToClient(String.format(message, args.get(1), builder.toString().trim()));
 
         }
     }
