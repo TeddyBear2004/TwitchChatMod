@@ -31,7 +31,7 @@ public class Main {
         twitchChatConfig.setDefault("accessToken", "ACCESS_TOKEN");
         twitchChatConfig.setDefault("channel", "CHANNEL_TO_JOIN");
         twitchChatConfig.setDefault("toIgnore", new String[]{"exampleUser1", "exampleUser2"});
-        twitchChatConfig.setDefault("language", "lang/de_twitch");
+        twitchChatConfig.setDefault("language", "lang/en_twitch");
         twitchChatConfig.save();
 
         languageConfig = new FileConfig(Objects.requireNonNull(twitchChatConfig.getString("language")));
