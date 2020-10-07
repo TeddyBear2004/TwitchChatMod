@@ -30,4 +30,4 @@ Während des Spielens kann man sich mit #help eine Hilfe Übersicht ausgeben las
 
 Viel Spaß mit der Mod.
 
-Download: https://www.dreamtale.de/mods/twitchchat-1.0.jar
+Download: https://www.dreamtale.de/mods/twitchchat-1.1.jar
